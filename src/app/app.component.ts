@@ -24,11 +24,17 @@ const HEROES: Hero[] = [
   <h1>{{title}}</h1>
   <h2>My Heros</h2>
   <ul class="heroes">
-    <li>
-      <!-- each hero goes here -->
+    <li *ngFor="let hero of heroes">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
     </li>
   </ul>
-  `
+  `,
+  styles: [`
+    .selected {
+      background-color: #CFD8DC !important;
+      color: white;
+    }
+  `]
 })
 export class AppComponent {
   title = 'Tour of Heros';
